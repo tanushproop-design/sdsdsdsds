@@ -1,0 +1,25 @@
+<input type="file" id="song">
+<input id="title" placeholder="Song title">
+<textarea id="lyrics" placeholder="Lyrics"></textarea>
+<button onclick="upload()">Upload</button>
+
+<script type="module">
+import { storage, db } from "./firebase.js";
+import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+import { addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+window.upload = async function(){
+  const f = song.files[0];
+  const refSong = ref(storage,"songs/"+f.name);
+  await uploadBytes(refSong,f);
+  const url = await getDownloadURL(refSong);
+
+  await addDoc(collection(db,"songs"),{
+    title:title.value,
+    audio:url,
+    lyrics:lyrics.value,
+    created: Date.now()
+  });
+  alert("Uploaded!");
+}
+</script>
