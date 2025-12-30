@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BakuS Lyrics</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="description" content="BakuS Lyrics – latest songs & lyrics">
+<meta name="keywords" content="lyrics, songs, bakus lyrics">
+<meta name="author" content="BakuS">
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<video class="bg" autoplay muted loop>
+  <source src="background.mp4" type="video/mp4">
+</video>
+
+<div class="center">
+  <div class="box">
+    <img src="logo.png" class="logo">
+    <div class="subtitle">Official Lyrics & Music Zone 🔥</div>
+
+    <div class="player">
+      <audio id="audio" controls></audio>
+      <div id="songList"></div>
+    </div>
+
+    <div class="socials">
+      <a href="https://youtube.com/@bakuarena" target="_blank">YouTube</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/player.js"></script>
+<script>
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e=>{
+  cursor.style.left = e.clientX+"px";
+  cursor.style.top = e.clientY+"px";
+});
+</script>
+</body>
+</html>
