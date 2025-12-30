@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyrics</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center">
+  <div class="box">
+    <h2>Lyrics</h2>
+    <pre id="lyricsDisplay"></pre>
+    <a href="index.html">Back</a>
+  </div>
+</div>
+
+<script>
+document.getElementById("lyricsDisplay").innerText =
+localStorage.getItem("lyrics") || "No lyrics available";
+</script>
+</body>
+</html>
